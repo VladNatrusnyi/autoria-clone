@@ -1,0 +1,11 @@
+.header_wrapper {
+    border-bottom: 1px solid grey;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /*background: green;*/
+}
+
+.header_img {
+    width: 100px;
+}
