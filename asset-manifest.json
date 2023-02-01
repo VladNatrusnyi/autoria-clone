@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/autoria-clone/static/css/main.3b435afb.css",
+    "main.js": "/autoria-clone/static/js/main.65f7c02f.js",
+    "static/media/race-car-309123_1280.jpg": "/autoria-clone/static/media/race-car-309123_1280.31b7446744fe44775887.jpg",
+    "index.html": "/autoria-clone/index.html",
+    "main.3b435afb.css.map": "/autoria-clone/static/css/main.3b435afb.css.map",
+    "main.65f7c02f.js.map": "/autoria-clone/static/js/main.65f7c02f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3b435afb.css",
+    "static/js/main.65f7c02f.js"
+  ]
+}
