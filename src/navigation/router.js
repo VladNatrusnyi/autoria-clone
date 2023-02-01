@@ -4,6 +4,8 @@ import {ErrorPage} from "../pages/ErrorPage/ErrorPage";
 import {MainPage} from "../pages/MainPage";
 import {SecondPage} from "../pages/SecondPage";
 import {ThirdPage} from "../pages/ThirdPage";
+import {AutoListPage} from "../pages/AutoListPage/AutoListPage";
+import {CarList} from "../components/CarList/CarList";
 
 
 export const router = createBrowserRouter([
@@ -17,14 +19,8 @@ export const router = createBrowserRouter([
         element: <MainPage />,
       },
       {
-        path: "second",
-        element: <SecondPage />,
-        children: [
-          {
-            path: "third",
-            element: <ThirdPage />,
-          }
-        ]
+        path: "catalog",
+        element: <AutoListPage />,
       },
     ],
   },

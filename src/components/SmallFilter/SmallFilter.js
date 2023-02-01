@@ -6,17 +6,21 @@ import {State} from "../Filters/State/State";
 import {Price} from "../Filters/Price/Price";
 import {CollapseWrapper} from "../UI/CollapseWrapper";
 import {useDispatch, useSelector} from "react-redux";
-import {useMemo} from "react";
+import {useEffect, useMemo} from "react";
 import {Years} from "../Filters/Years/Years";
 import {Button} from "antd";
-import {setFilteringQueryString} from "../../store/filters/filtersSlice";
+import { SearchOutlined } from '@ant-design/icons';
+import {clearParamsString, setFilteringQueryString} from "../../store/filters/filtersSlice";
+import {useNavigate} from "react-router";
 
 
 export const SmallFilter = () => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const price = useSelector(state => state.filters.filteringParams.price)
   const years = useSelector(state => state.filters.filteringParams.years)
+  const paramsString = useSelector(state => state.filters.paramsString)
 
   const currencyTypes = useSelector(state => state.filters.currencyTypes)
 
@@ -44,10 +48,16 @@ export const SmallFilter = () => {
     }
   }, [years])
 
-  const foo = () => {
+  const getFilterParams = () => {
     dispatch(setFilteringQueryString())
   }
 
+  useEffect(() => {
+    if (paramsString) {
+      navigate(`catalog?${paramsString}`)
+      dispatch(clearParamsString())
+    }
+  }, [paramsString])
 
 
   return (
@@ -63,7 +73,8 @@ export const SmallFilter = () => {
         <Years />
       </CollapseWrapper>
 
-      <Button type="primary" onClick={foo}>Пошук</Button>
+      <Button type="primary" onClick={getFilterParams} icon={<SearchOutlined />}>Пошук</Button>
+
     </div>
   )
 }

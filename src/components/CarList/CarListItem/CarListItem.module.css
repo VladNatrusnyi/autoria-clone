@@ -1,0 +1,97 @@
+.wrapper {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid lightgray;
+}
+.imgBlock {
+    flex: 0 0 300px;
+    height: 200px;
+}
+.imgBlock img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.infoBlock {
+    flex: 0 1 100%;
+    padding-left: 15px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.title {
+    margin: 0;
+    color: blue;
+    font-size: 18px;
+}
+.price {
+    display: flex;
+    align-items: flex-end;
+}
+.priceDollar {
+    margin: 0;
+    color: green;
+    font-size: 18px;
+    font-weight: bold;
+}
+.priceUAN {
+    font-size: 12px;
+    margin: 0;
+}
+.priseDecor {
+    width: 4px;
+    height: 4px;
+    background: gray;
+    align-self: center;
+    border-radius: 20px;
+    margin: 0 7px;
+}
+.badgesWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px 0;
+}
+.badge {
+    margin-bottom: 5px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+.badge i {
+    margin-right: 5px;
+}
+
+.badge div {
+    font-size: 14px;
+}
+.uniqueNumbers {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.vinCode {}
+.plateNumber {}
+.roadAccident {}
+.description {
+    font-size: 14px;
+}
+.description.closed {
+    max-width: 310px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.description.closed:hover {
+    cursor: pointer;
+}
+.date {
+    color: gray;
+    font-size: 14px;
+}
+

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/autoria.iml" filepath="$PROJECT_DIR$/.idea/autoria.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/autoria-clone.iml" filepath="$PROJECT_DIR$/.idea/autoria-clone.iml" />
     </modules>
   </component>
 </project>
