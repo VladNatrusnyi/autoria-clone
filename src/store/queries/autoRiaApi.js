@@ -9,7 +9,7 @@ export const autoRiaApi = createApi({
   endpoints: (builder) => ({
     getTypesOfTransport: builder.query({
       query: () => ({
-        url: `categories/?api_key=${apiKey}`
+        url: `categories?api_key=${apiKey}`
       }),
     }),
 
@@ -33,13 +33,22 @@ export const autoRiaApi = createApi({
 
     getCarsId: builder.query({
       async queryFn(_arg, _queryApi, _extraOptions, fetchWithBQ) {
-        const randomResult = await fetchWithBQ(`search?api_key=${apiKey}&${_arg}`)
+        const randomResult = await fetchWithBQ({
+          url: `search?api_key=${apiKey}&${_arg}`
+        })
         if (randomResult.error) return { error: randomResult.error }
         console.log('randomResult.data',randomResult.data)
+
+        console.log('ALL data', randomResult.data)
         return randomResult.data ?
           { data: {
               ids: randomResult.data.result.search_result.ids,
-              count: randomResult.data.result.search_result.count
+              count: randomResult.data.result.search_result.count,
+              commonCars: {
+                ids: randomResult.data.result.search_result_common.data.map(item => item.id),
+                count: randomResult.data.result.search_result_common.count
+              }
+
             }
           }
         : { error: randomResult.error }
@@ -74,5 +83,5 @@ export const {
   useGetModelsOfTransportQuery,
   useGetRegionsOfTransportQuery,
   useGetCarsIdQuery,
-  useGetCarsQuery
+  useGetCarsQuery,
 } = autoRiaApi

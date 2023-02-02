@@ -11,12 +11,13 @@ export const TypesOfTransport = ({width = 120}) => {
     dispatch(setFilterPrams({type: 'CATEGORY', data: value}))
   };
 
-  const { types , isLoading, isError } = useGetTypesOfTransportQuery(undefined, {
-    selectFromResult: ({ data }) => ({
-      types: data && [{label: 'Будь-який', value: 0}, ...data?.map(item => ({label: item.name, value: item.value}))],
-    }),
-  })
+  const { data, isLoading, isError } = useGetTypesOfTransportQuery(undefined, {})
 
+  const types = data
+    ? [{label: 'Будь-який', value: 0}, ...data?.map(item => ({label: item.name, value: item.value}))]
+    : []
+
+  console.log('Types', isLoading)
 
   return (
     <Select

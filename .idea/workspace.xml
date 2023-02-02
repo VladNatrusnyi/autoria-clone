@@ -5,34 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="914818c4-2b37-470e-9d22-d8e30dc04c60" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/CarList/CarList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CarList/CarList.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CarList/CarListItem/CarListItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CarList/CarListItem/CarListItem.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/CarNumber/CarNumber.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/CarNumber/CarNumber.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/CustomLink.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/InfoBar/InfoBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/InfoBar/InfoBar.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/VinCode/VinCode.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/VinCode/VinCode.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helpers/moneyFormatter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/AutoListPage/AutoListPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/AutoListPage/AutoListPage.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/autoria.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SmallFilter/SmallFilter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SmallFilter/SmallFilter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CarList/CarList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CarList/CarList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CarList/CarList.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CarList/CarList.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Filters/Brand/Brand.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filters/Brand/Brand.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Filters/Model/Model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filters/Model/Model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Filters/State/State.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filters/State/State.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Filters/TypesOfTransport/TypesOfTransport.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filters/TypesOfTransport/TypesOfTransport.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/RootLayout/RootLayuot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/RootLayout/RootLayuot.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/navigation/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/filters/filtersSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/filters/filtersSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AutoListPage/AutoListPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AutoListPage/AutoListPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/queries/autoRiaApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/queries/autoRiaApi.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +75,9 @@
       <option name="presentableId" value="Default" />
       <updated>1675070304709</updated>
       <workItem from="1675070306042" duration="23283000" />
-      <workItem from="1675186072847" duration="24154000" />
+      <workItem from="1675186072847" duration="29825000" />
+      <workItem from="1675320265688" duration="11536000" />
+      <workItem from="1675332089169" duration="8102000" />
     </task>
     <servers />
   </component>

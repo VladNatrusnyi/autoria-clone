@@ -15,21 +15,22 @@ export const Model = ({width = 120}) => {
     dispatch(setFilterPrams({type: 'MODEL', data: null}))
   }, [markId, categoryId])
 
-  const { models = [] , isLoading, isError } = useGetModelsOfTransportQuery({categoryId, markId}, {
+  const { data, isLoading, isFetching, isError } = useGetModelsOfTransportQuery({categoryId, markId}, {
     skip: !markId,
-    selectFromResult: ({ data }) => ({
-      models: data?.map(category => {
-        if (Array.isArray(category)) {
-          return {
-            label: category[0].name,
-            options: category.map(item => ({label: item.name, value: item.value}))
-          }
-        } else {
-          return ({label: category.name, value: category.value})
-        }
-      }),
-    }),
   })
+
+  const models = data
+    ? data?.map(category => {
+      if (Array.isArray(category)) {
+        return {
+          label: category[0].name,
+          options: category.map(item => ({label: item.name, value: item.value}))
+        }
+      } else {
+        return ({label: category.name, value: category.value})
+      }
+    })
+    : []
 
 
   const onChange = (value) => {
@@ -40,6 +41,12 @@ export const Model = ({width = 120}) => {
     }
   };
 
+
+  useMemo(() => {
+    if (isFetching) {
+      console.log('Model isFetching')
+    }
+    }, [isFetching])
 
   // const onSearch = (value) => {
   //   console.log('search:', value);

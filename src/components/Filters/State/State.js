@@ -8,11 +8,9 @@ export const State = ({width = 120}) => {
 
   const statesId = useSelector(state => state.filters.filteringParams.location.state)
 
-  const { states , isLoading, isError } = useGetRegionsOfTransportQuery(undefined, {
-    selectFromResult: ({ data }) => ({
-      states: data?.map(item => ({label: item.name, value: item.value})),
-    }),
-  })
+  const { data , isLoading, isError } = useGetRegionsOfTransportQuery(undefined, {})
+
+  const states = data && data.map(item => ({label: item.name, value: item.value}))
 
   const onChange = (value) => {
     if (value) {

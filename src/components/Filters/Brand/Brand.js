@@ -14,12 +14,13 @@ export const Brand = ({width = 120}) => {
     dispatch(setFilterPrams({type: 'MARKA', data: null}))
   }, [categoryId])
 
-  const { marks = [] , isLoading, isError } = useGetMarksOfTransportQuery(categoryId, {
+  const { data , isLoading, isError } = useGetMarksOfTransportQuery(categoryId, {
     skip: !categoryId,
-    selectFromResult: ({ data }) => ({
-      marks: data?.map(item => ({label: item.name, value: item.value})),
-    }),
   })
+
+  const marks = data
+    ? [{label: 'Будь-який', value: 0}, ...data?.map(item => ({label: item.name, value: item.value}))]
+    : []
 
 
 

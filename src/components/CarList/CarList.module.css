@@ -3,3 +3,12 @@
     display: flex;
     justify-content: center;
 }
+
+.skeleton {
+    margin-bottom: 20px;
+}
+
+.notFound {
+    text-align: center;
+    font-size: 18px;
+}
