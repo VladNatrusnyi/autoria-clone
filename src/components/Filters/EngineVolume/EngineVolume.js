@@ -14,7 +14,6 @@ export const EngineVolume = ({onChangeEngineVolume}) => {
       if (engineVolumeFrom && engineVolumeTo && engineVolumeTo < engineVolumeFrom) {
         const value = {...engineVolume, engineVolumeFrom: engineVolumeTo, engineVolumeTo: engineVolumeFrom }
         onChangeEngineVolume(value, 'change')
-        // dispatch(setFilterPrams({type: 'PRICE', data: {...price, price_ot: price_do, price_do: price_ot }}))
       }
     },2000);
 
@@ -23,12 +22,10 @@ export const EngineVolume = ({onChangeEngineVolume}) => {
 
   const onChangeEngineVolumeFrom = (value) => {
     onChangeEngineVolume({...engineVolume, engineVolumeFrom: value}, 'engineVolumeFrom')
-    // dispatch(setFilterPrams({type: 'PRICE', data: value}))
   };
 
   const onChangeEngineVolumeTo = (value) => {
     onChangeEngineVolume({...engineVolume, engineVolumeTo: value}, 'engineVolumeTo')
-    // dispatch(setFilterPrams({type: 'PRICE', data: value}))
   };
 
 

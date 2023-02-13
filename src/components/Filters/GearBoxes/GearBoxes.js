@@ -11,10 +11,9 @@ export const GearBoxes = ({onChangeGearBoxes}) => {
 
   const gearBox = useSelector(state => state.filters.filteringParams.gearbox)
 
-    const handleChange = (value) => {
-      onChangeGearBoxes(value)
-    };
-
+  const handleChange = (value) => {
+    onChangeGearBoxes(value)
+  };
 
   const { data, isLoading, isError } = useGetGearboxesOfTransportQuery(categoryId, {
     skip: !categoryId,

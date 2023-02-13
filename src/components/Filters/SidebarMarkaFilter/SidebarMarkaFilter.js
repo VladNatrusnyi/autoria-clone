@@ -1,11 +1,9 @@
 import {Brand} from "../Brand/Brand";
 import {Model} from "../Model/Model";
-import {TypesOfTransport} from "../TypesOfTransport/TypesOfTransport";
 import {SidebarFilterBlock} from "../../UI/SidebarFilterBlock/SidebarFilterBlock";
 
 import styles from './SidebarMarkaFilter.module.css'
 import {
-  addAnotherMark,
   deleteMarkBlock,
   setFilteringQueryString,
   setFilterPrams

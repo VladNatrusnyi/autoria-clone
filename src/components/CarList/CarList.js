@@ -3,8 +3,6 @@ import {useGetCarsIdQuery, useGetCarsQuery} from "../../store/queries/autoRiaApi
 import {Pagination, Skeleton} from "antd";
 import styles from './CarList.module.css'
 import {useSelector} from "react-redux";
-import {useEffect, useMemo} from "react";
-import {useParamsInSearchString} from "../../customHooks/useParamsInSearchString";
 import {PreloaderCar} from "../UI/PreloaderCar/PreloaderCar";
 
 export const CarList = ({objOfParams, onChangePagination}) => {

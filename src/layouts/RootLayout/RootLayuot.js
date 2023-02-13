@@ -27,11 +27,7 @@ export const RootLayout = () => {
           <div style={{ height: open ? height + 56 : 'auto'}}>
             <Outlet />
           </div>
-          {/*<Button type="primary" onClick={showDrawer}>*/}
-          {/*  Open*/}
-          {/*</Button>*/}
 
-          {/*<MainPage />*/}
           <Drawer
             title="Фільтри"
             placement="left"
@@ -41,9 +37,6 @@ export const RootLayout = () => {
             getContainer={false}
             width={270}
             height={height}
-            // style={{
-            //   height: height,
-            // }}
           >
             <Sidebar />
           </Drawer>

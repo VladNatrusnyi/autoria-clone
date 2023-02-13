@@ -1,8 +1,5 @@
-
 import styles from './Header.module.css'
 import {CustomLink} from "../UI/CustomLink";
-import {Button} from "antd";
-import {SearchOutlined} from "@ant-design/icons";
 import {useLocation, useNavigate} from "react-router";
 import {useWindowDimensions} from "../../customHooks/useWindowDimensions";
 export const Header = ({showDrawer, onCloseDrawer, isOpenDrawer}) => {

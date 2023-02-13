@@ -1,18 +1,13 @@
 import {Select} from "antd";
 import {useGetTypesOfTransportQuery} from "../../../store/queries/autoRiaApi";
-import {useDispatch, useSelector} from "react-redux";
-import {setFilterPrams} from "../../../store/filters/filtersSlice";
-import {useMemo} from "react";
-import {useParamsInSearchString} from "../../../customHooks/useParamsInSearchString";
+import {useSelector} from "react-redux";
 
 export const TypesOfTransport = ({width = 120, onChangeTypesOfTransport}) => {
-  const dispatch = useDispatch()
 
   const category_id = useSelector(state => state.filters.filteringParams.category_id)
 
   const onChange = (value) => {
     onChangeTypesOfTransport(value)
-    // dispatch(setFilterPrams({type: 'CATEGORY', data: value}))
   };
 
   const { data, isLoading, isError } = useGetTypesOfTransportQuery(undefined, {})
@@ -20,7 +15,6 @@ export const TypesOfTransport = ({width = 120, onChangeTypesOfTransport}) => {
   const types = data
     ? [{label: 'Будь-який', value: 0}, ...data?.map(item => ({label: item.name, value: item.value}))]
     : []
-
 
   return (
     <>

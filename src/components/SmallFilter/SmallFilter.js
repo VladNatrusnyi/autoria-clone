@@ -2,7 +2,6 @@ import styles from './SmallFilter.module.css'
 import {TypesOfTransport} from "../Filters/TypesOfTransport/TypesOfTransport";
 import {Brand} from "../Filters/Brand/Brand";
 import {Model} from "../Filters/Model/Model";
-import {State} from "../Filters/State/State";
 import {Price} from "../Filters/Price/Price";
 import {CollapseWrapper} from "../UI/CollapseWrapper";
 import {useDispatch, useSelector} from "react-redux";
@@ -81,21 +80,10 @@ export const SmallFilter = () => {
           value: null, markFilterId, identifier: 'mark'
         }}))
     }
-    // if (value) {
-    //   dispatch(setFilterPrams({type: 'MARKA', data: value}))
-    // } else {
-    //   dispatch(setFilterPrams({type: 'MARKA', data: null}))
-    // }
   }
 
 
   const onChangeModel = (value, markFilterId) => {
-    // if (value) {
-    //   dispatch(setFilterPrams({type: 'MODEL', data: value}))
-    // } else {
-    //   dispatch(setFilterPrams({type: 'MODEL', data: null}))
-    // }
-
     if (value) {
       dispatch(setFilterPrams({type: 'MARKARR', data: {
         value, markFilterId, identifier: 'model'
@@ -168,10 +156,7 @@ export const SmallFilter = () => {
         </CollapseWrapper>
       </div>
 
-
-
       <Button className={styles.btn} type="primary" onClick={getFilterParams} icon={<SearchOutlined />}>Пошук</Button>
-
     </div>
   )
 }

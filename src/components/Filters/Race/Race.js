@@ -14,7 +14,6 @@ export const Race = ({onChangeRace}) => {
       if (raceFrom && raceTo && raceTo < raceFrom) {
         const value = {...race, raceFrom: raceTo, raceTo: raceFrom }
         onChangeRace(value, 'change')
-        // dispatch(setFilterPrams({type: 'PRICE', data: {...price, price_ot: price_do, price_do: price_ot }}))
       }
     },2000);
 
@@ -23,12 +22,10 @@ export const Race = ({onChangeRace}) => {
 
   const onChangeRaceFrom = (value) => {
     onChangeRace({...race, raceFrom: value}, 'raceFrom')
-    // dispatch(setFilterPrams({type: 'PRICE', data: value}))
   };
 
   const onChangeRaceTo = (value) => {
     onChangeRace({...race, raceTo: value}, 'raceTo')
-    // dispatch(setFilterPrams({type: 'PRICE', data: value}))
   };
 
 

@@ -5,76 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="914818c4-2b37-470e-9d22-d8e30dc04c60" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/CarDataTable/CarDataTable.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CarDataTable/CarDataTable.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CarList/CarListItem/MoneyBlock/MoneyBlock.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CarList/CarListItem/MoneyBlock/MoneyBlock.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Filters/Abroad/Abroad.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Filters/BodyTypes/BodyTypes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Filters/BodyTypes/BodyTypes.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Filters/Condition/Condition.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Filters/Condition/Condition.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Filters/Custom/Custom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Filters/Custom/Custom.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Filters/DriverTypes/DriverTypes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Filters/DriverTypes/DriverTypes.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Filters/EngineVolume/EngineVolume.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Filters/EngineVolume/EngineVolume.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Filters/Fuel/Fuel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Filters/Fuel/Fuel.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Filters/GearBoxes/GearBoxes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Filters/LocationCascader/LocationCascader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Filters/Race/Race.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Filters/Race/Race.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Filters/SidebarMarkaFilter/SidebarMarkaFilter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Filters/SidebarMarkaFilter/SidebarMarkaFilter.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Filters/SubmissionPeriod/SubmissionPeriod.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/CarBrandsSlider/CarBrandSlider.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/CarBrandsSlider/CarBrandsSlider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/CustomDropdown/CustomDropdown.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/CustomDropdown/CustomDropdown.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/CustomTags/CustomTags.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/PhotoSlider/PhotoSlider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/PhotoSlider/PhotoSlider.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/PhotoSlider/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/PreloaderCar/PreloaderCar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/SidebarFilterBlock/SidebarFilterBlock.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/SidebarFilterBlock/SidebarFilterBlock.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/customHooks/useParamsInSearchString.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/customHooks/useWindowDimensions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helpers/objDataToString.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/CarPage/CarPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/CarPage/CarPage.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CarDataTable/CarDataTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CarDataTable/CarDataTable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CarList/CarList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CarList/CarList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CarList/CarList.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CarList/CarList.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CarList/CarListItem/CarListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CarList/CarListItem/CarListItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CarList/CarListItem/CarListItem.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CarList/CarListItem/CarListItem.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Filters/Abroad/Abroad.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filters/Abroad/Abroad.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Filters/BodyTypes/BodyTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filters/BodyTypes/BodyTypes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Filters/Brand/Brand.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filters/Brand/Brand.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Filters/Condition/Condition.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filters/Condition/Condition.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Filters/Custom/Custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filters/Custom/Custom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Filters/DriverTypes/DriverTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filters/DriverTypes/DriverTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Filters/EngineVolume/EngineVolume.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filters/EngineVolume/EngineVolume.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Filters/Fuel/Fuel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filters/Fuel/Fuel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Filters/GearBoxes/GearBoxes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filters/GearBoxes/GearBoxes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Filters/LocationCascader/LocationCascader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filters/LocationCascader/LocationCascader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Filters/Model/Model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filters/Model/Model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Filters/Price/Price.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filters/Price/Price.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Filters/State/State.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filters/State/State.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Filters/Race/Race.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filters/Race/Race.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Filters/SidebarMarkaFilter/SidebarMarkaFilter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filters/SidebarMarkaFilter/SidebarMarkaFilter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Filters/SubmissionPeriod/SubmissionPeriod.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filters/SubmissionPeriod/SubmissionPeriod.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Filters/TypesOfTransport/TypesOfTransport.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filters/TypesOfTransport/TypesOfTransport.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Filters/Years/Year.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filters/Years/Year.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Filters/Years/Years.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filters/Years/Years.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Filters/Years/YearsSelect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filters/Years/YearsSelect.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SmallFilter/SmallFilter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SmallFilter/SmallFilter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SmallFilter/SmallFilter.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SmallFilter/SmallFilter.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/InfoBar/InfoBar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/InfoBar/InfoBar.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/CarBrandsSlider/CarBrandsSlider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/CarBrandsSlider/CarBrandsSlider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/PhotoSlider/PhotoSlider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/PhotoSlider/PhotoSlider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customHooks/useParamsInSearchString.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/customHooks/useParamsInSearchString.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/layouts/RootLayout/RootLayuot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/RootLayout/RootLayuot.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/navigation/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/AutoListPage/AutoListPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AutoListPage/AutoListPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AutoListPage/AutoListPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AutoListPage/AutoListPage.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/SecondPage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ThirdPage.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/filters/filtersSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/filters/filtersSlice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/queries/autoRiaApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/queries/autoRiaApi.js" afterDir="false" />
     </list>
@@ -149,7 +115,7 @@
       <workItem from="1675943352046" duration="5354000" />
       <workItem from="1675966931810" duration="11447000" />
       <workItem from="1675981376269" duration="6698000" />
-      <workItem from="1676284974551" duration="10037000" />
+      <workItem from="1676284974551" duration="19136000" />
     </task>
     <servers />
   </component>

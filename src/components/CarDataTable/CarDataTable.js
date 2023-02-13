@@ -3,8 +3,6 @@ import {Descriptions} from "antd";
 import {MoneyBlock} from "../CarList/CarListItem/MoneyBlock/MoneyBlock";
 import dateFormat from "dateformat";
 export const CarDataTable = ({carData}) => {
-
-
   const colorItem = (colorData) => {
     return (
       <div className={styles.colorWrapper}>
@@ -13,7 +11,6 @@ export const CarDataTable = ({carData}) => {
       </div>
     )
   }
-
 
   const tabelData = [
     { label: 'Ціна', value: <MoneyBlock necessaryData={carData} status={'CARPAGE'}/> },
@@ -29,7 +26,6 @@ export const CarDataTable = ({carData}) => {
     { label: 'Особливості', value: carData.infoBarText },
     { label: 'Опис', value: carData.description },
   ]
-
 
   return (
     <Descriptions

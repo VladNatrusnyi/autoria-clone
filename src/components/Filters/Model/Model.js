@@ -1,12 +1,9 @@
-import {useDispatch, useSelector} from "react-redux";
-import {useEffect, useMemo} from "react";
-import {setFilterPrams} from "../../../store/filters/filtersSlice";
+import {useSelector} from "react-redux";
+import {useMemo} from "react";
 import {useGetModelsOfTransportQuery} from "../../../store/queries/autoRiaApi";
 import {Select} from "antd";
 
 export const Model = ({width = 120, onChangeModel, markFilterId}) => {
-  const dispatch = useDispatch()
-
   const categoryId = useSelector(state => state.filters.filteringParams.category_id)
 
   const markArr = useSelector(state => state.filters.filteringParams.markArr)
@@ -14,11 +11,6 @@ export const Model = ({width = 120, onChangeModel, markFilterId}) => {
   const markId = markArr.find(el => el.markFilterId === markFilterId)?.marka_id
 
   const modelId = markArr.find(el => el.markFilterId === markFilterId)?.model_id
-
-  // useEffect(() => {
-  //   // dispatch(setFilterPrams({type: 'MODEL', data: null}))
-  //   onChangeModel(null, markFilterId)
-  // }, [markId, categoryId])
 
   const { data, isLoading, isFetching, isError } = useGetModelsOfTransportQuery({categoryId, markId}, {
     skip: !markId,

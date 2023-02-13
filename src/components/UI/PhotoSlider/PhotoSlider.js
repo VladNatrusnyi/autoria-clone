@@ -1,21 +1,4 @@
-// <Carousel className={styles.Carousel} showArrows={true} onChange={onChange} showIndicators={false} dynamicHeight={false} >
-//   {
-//     carImages && carImages.map(el => {
-//       return (
-//         <div className={styles.photoWrapper}>
-//           <img src={ }'')}{el} alt="ddd"/>
-//         </div>
-//       )
-//     })
-//   }
-//
-// </Carousel>
-
-
-
-
-
-import React, { useRef, useState } from "react";
+import React, {useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import styles from './PhotoSlider.module.css'

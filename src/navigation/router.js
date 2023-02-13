@@ -3,7 +3,6 @@ import {RootLayout} from "../layouts/RootLayout/RootLayuot";
 import {ErrorPage} from "../pages/ErrorPage/ErrorPage";
 import {MainPage} from "../pages/MainPage";
 import {AutoListPage} from "../pages/AutoListPage/AutoListPage";
-import {CarList} from "../components/CarList/CarList";
 import {CarPage} from "../pages/CarPage/CarPage";
 
 

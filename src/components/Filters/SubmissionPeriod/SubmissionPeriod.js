@@ -20,7 +20,6 @@ export const SubmissionPeriod = ({onChangeTop}) => {
 
   const top = useSelector(state => state.filters.filteringParams.top).toString()
 
-
   const handleChange = (value) => {
     console.log(`selected ${value}`);
     onChangeTop(value)

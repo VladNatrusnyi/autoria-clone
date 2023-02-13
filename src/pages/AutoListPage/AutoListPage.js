@@ -1,5 +1,5 @@
-import {useDispatch, useSelector} from "react-redux";
-import {useEffect, useMemo} from "react";
+import {useDispatch} from "react-redux";
+import {useEffect} from "react";
 import styles from './AutoListPage.module.css'
 import {CarList} from "../../components/CarList/CarList";
 import ScrollToTop from "react-scroll-up";

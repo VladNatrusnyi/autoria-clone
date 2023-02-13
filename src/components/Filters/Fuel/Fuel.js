@@ -8,7 +8,6 @@ export const Fuel = ({onChangeFuel}) => {
 
   const type = useSelector(state => state.filters.filteringParams.type)
 
-
   const { data, isLoading, isError } = useGetFuelOfTransportQuery(undefined, {})
 
   const fuelTypes = data

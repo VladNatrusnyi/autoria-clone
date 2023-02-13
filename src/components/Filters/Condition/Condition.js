@@ -17,7 +17,6 @@ export const Condition = ({onChangeAutoRepairs, onChangeSoldAuto}) => {
     onChangeSoldAuto(value)
   }
 
-
   return (
     <>
       <div className={styles.wrapper}>

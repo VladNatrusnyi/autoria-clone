@@ -1,5 +1,4 @@
 import styles from './CarListItem.module.css'
-import {moneyFormatter} from "../../../helpers/moneyFormatter";
 import dateFormat from "dateformat";
 import {CarNumber} from "../../UI/CarNumber/CarNumber";
 import {VinCode} from "../../UI/VinCode/VinCode";
@@ -36,11 +35,9 @@ export const CarListItem = ({carData}) => {
     isActive: carData.autoData.active
   }
 
-
   const goToCarPage = () => {
     navigate(`/car/${necessaryData.autoId}`)
   }
-
 
   return (
     <div className={styles.wrapper}>

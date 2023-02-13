@@ -21,7 +21,6 @@ import {GearBoxes} from "../Filters/GearBoxes/GearBoxes";
 import {Fuel} from "../Filters/Fuel/Fuel";
 import {DriverTypes} from "../Filters/DriverTypes/DriverTypes";
 import {EngineVolume} from "../Filters/EngineVolume/EngineVolume";
-import {Custom} from "../Filters/Custom/Custom";
 import {Abroad} from "../Filters/Abroad/Abroad";
 import {Condition} from "../Filters/Condition/Condition";
 import {SubmissionPeriod} from "../Filters/SubmissionPeriod/SubmissionPeriod";

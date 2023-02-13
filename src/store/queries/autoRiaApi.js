@@ -5,6 +5,9 @@ const apiKey = 'B10K8BR7jl1RdaW7g2LR1bBwvU0AkNYKeWyydnvA'
 
 export const autoRiaApi = createApi({
   reducerPath: 'autoRiaApi',
+  headers: {
+    "Access-Control-Allow-Origin": "*"
+  },
   baseQuery: fetchBaseQuery({ baseUrl: 'https://developers.ria.com/auto/' }),
   endpoints: (builder) => ({
     getTypesOfTransport: builder.query({

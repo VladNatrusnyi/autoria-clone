@@ -2,7 +2,7 @@ import styles from './Year.module.css'
 import {useDispatch, useSelector} from "react-redux";
 import {YearsSelect} from "./YearsSelect";
 import {useEffect} from "react";
-import {repeatSearch, setFilteringQueryString, setFilterPrams} from "../../../store/filters/filtersSlice";
+import {setFilteringQueryString, setFilterPrams} from "../../../store/filters/filtersSlice";
 
 export const Years = ({onChangeYears, markFilterId}) => {
   const dispatch = useDispatch()
@@ -25,7 +25,6 @@ export const Years = ({onChangeYears, markFilterId}) => {
         }}))
 
       repeatSearch()
-      // dispatch(setFilterPrams({type: 'YEARS', data: {s_yers: po_yers, po_yers: s_yers}}))
     }
   }, [s_yers, po_yers])
 

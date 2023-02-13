@@ -12,6 +12,5 @@ export const useParamsInSearchString = () => {
     objOfParams: objOfParams,
     setParamsInSearch: (paramsForChange) => setSearchParams(paramsForChange)
 
-  // {...objOfParams, ...paramsForChange}
   }
 }

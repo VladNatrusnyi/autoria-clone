@@ -9,8 +9,7 @@ export const DriverTypes = ({onChangeDriverTypes}) => {
 
   const driverTypes = useSelector(state => state.filters.filteringParams.driverTypes)
 
-
-  const { data, isLoading, isError } = useGetDriverTypesOfTransportQuery(categoryId, {
+  const { data } = useGetDriverTypesOfTransportQuery(categoryId, {
     skip: !categoryId,
   })
 
@@ -18,11 +17,9 @@ export const DriverTypes = ({onChangeDriverTypes}) => {
     ? data?.map(item => ({label: item.name, value: item.value}))
     : []
 
-
   const onChange = (checkedValues) => {
     onChangeDriverTypes(checkedValues)
   };
-
 
   return (
     <>

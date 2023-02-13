@@ -192,7 +192,6 @@ const filtersSlice = createSlice({
           //   }).reduce((acc, curr) => ({ ...acc, ...curr }), {});
           // }
         }
-        // [${idx + 1}]
 
 
         // if (params[item] && !is.object(params[item] && !Array.isArray(params[item]))) {

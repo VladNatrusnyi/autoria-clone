@@ -1,6 +1,5 @@
 import {yearArr} from "../../../helpers/yearArr";
 import {Select} from "antd";
-import {setFilterPrams} from "../../../store/filters/filtersSlice";
 import {useDispatch, useSelector} from "react-redux";
 
 export const YearsSelect = ({width = 90, value, placeholder, type, onChangeYears, markFilterId}) => {
@@ -12,7 +11,6 @@ export const YearsSelect = ({width = 90, value, placeholder, type, onChangeYears
 
   const onChange = (value) => {
     onChangeYears({...years, [type]: value ? value : null}, markFilterId)
-    // dispatch(setFilterPrams({type: 'YEARS', data: {...years, [type]: value ? value : null}}))
   }
 
   return (

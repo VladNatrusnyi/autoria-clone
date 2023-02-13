@@ -1,4 +1,4 @@
-import {Checkbox, Col, Row} from "antd";
+import {Checkbox} from "antd";
 import styles from "../Fuel/Fuel.module.css";
 import {CustomDropdown} from "../../UI/CustomDropdown/CustomDropdown";
 import {useSelector} from "react-redux";
@@ -21,7 +21,6 @@ export const Custom = ({onChangeCustom}) => {
   const onChange = (checkedValues) => {
     onChangeCustom(checkedValues)
   };
-
 
   return (
     <CustomDropdown>
