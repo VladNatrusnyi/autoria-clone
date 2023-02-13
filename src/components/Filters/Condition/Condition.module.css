@@ -1,0 +1,11 @@
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.text {
+    margin-left: 10px;
+    font-size: 14px;
+}

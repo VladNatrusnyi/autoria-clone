@@ -1,14 +1,29 @@
-import {Outlet, useLocation, useParams} from "react-router";
-import {useGetCarsIdQuery, useGetCarsQuery} from "../../store/queries/autoRiaApi";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useMemo} from "react";
 import styles from './AutoListPage.module.css'
-import {CarNumber} from "../../components/UI/CarNumber/CarNumber";
 import {CarList} from "../../components/CarList/CarList";
 import ScrollToTop from "react-scroll-up";
+import {changeFilterParams, setFilteringQueryString, setFilterPrams} from "../../store/filters/filtersSlice";
+import {Sidebar} from "../../components/Sidebar/Sidebar";
+import {useParamsInSearchString} from "../../customHooks/useParamsInSearchString";
+import {objDataToString} from "../../helpers/objDataToString";
 
 
 export const AutoListPage = () => {
+  const dispatch = useDispatch()
+
+  const {objOfParams, setParamsInSearch} = useParamsInSearchString()
+
+  useEffect(() => {
+    dispatch(changeFilterParams(objDataToString(objOfParams)))
+  }, [])
+
+
+  const onChangePagination = (page) => {
+    dispatch(setFilterPrams({type: 'PAGE', data: page - 1}))
+    dispatch(setFilteringQueryString())
+  }
+
   return (
     <div>
       <ScrollToTop showUnder={1000}>
@@ -17,14 +32,13 @@ export const AutoListPage = () => {
 
       <div className={styles.wrapper}>
         <div className={styles.sidebarBlock}>
-          <br/><br/>
-          <CarNumber />
-          <br/><br/><br/>
+          <Sidebar />
         </div>
         <div className={styles.carListBlock}>
-          {/*//outlet для carlist*/}
-          {/*<Outlet/>*/}
-          <CarList />
+          <CarList
+            objOfParams={objOfParams}
+            onChangePagination={onChangePagination}
+          />
           <div className={styles.pagination}></div>
         </div>
       </div>

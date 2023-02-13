@@ -1,0 +1,35 @@
+.wrapper {
+    width: 220px;
+    /*height: 68px;*/
+    overflow: hidden;
+}
+
+.wrapper.active {
+    height: 140px!important;
+    overflow: auto;
+}
+
+.showButton {
+    display: flex;
+    align-items: flex-end;
+}
+
+.showButton:hover {
+    cursor: pointer;
+    color: #1677ff;
+}
+
+.showButton div:hover {
+
+}
+
+.showButton div {
+    font-size: 14px;
+    margin-right: 2px;
+    border-bottom: 1px dashed black;
+}
+
+.showButton i {
+    font-size: 14px;
+    padding-top: 4px;
+}

@@ -10,43 +10,49 @@ import {useEffect, useMemo} from "react";
 import {Years} from "../Filters/Years/Years";
 import {Button} from "antd";
 import { SearchOutlined } from '@ant-design/icons';
-import {clearParamsString, setFilteringQueryString} from "../../store/filters/filtersSlice";
+import {clearParamsString, setFilteringQueryString, setFilterPrams} from "../../store/filters/filtersSlice";
 import {useNavigate} from "react-router";
+import {LocationCascader} from "../Filters/LocationCascader/LocationCascader";
 
 
 export const SmallFilter = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  const price = useSelector(state => state.filters.filteringParams.price)
-  const years = useSelector(state => state.filters.filteringParams.years)
+  const {
+    s_yers,
+    po_yers,
+    price_do,
+    price_ot,
+    currency
+  } = useSelector(state => state.filters.filteringParams)
   const paramsString = useSelector(state => state.filters.paramsString)
 
   const currencyTypes = useSelector(state => state.filters.currencyTypes)
 
   const pricePanelName = useMemo(() => {
-    const currency = currencyTypes.find(el => el.value === price.currency).label
-    if (!price.price_ot && !price.price_do) {
+    const currencyValue = currencyTypes.find(el => el.value === currency.toString()).label
+    if (!price_ot && !price_do) {
       return 'Ціна'
-    } else if (price.price_ot && price.price_do) {
-      return `Ціна, ${price.price_ot + currency} - ${price.price_do + currency}`
-    } else if (price.price_ot && !price.price_do) {
-      return `Ціна, від ${price.price_ot + currency}`
+    } else if (price_ot && price_do) {
+      return `Ціна, ${price_ot + currencyValue} - ${price_do + currencyValue}`
+    } else if (price_ot && !price_do) {
+      return `Ціна, від ${price_ot + currencyValue}`
     } else {
-      return `Ціна, до ${price.price_do + currency}`
+      return `Ціна, до ${price_do + currencyValue}`
     }
-  }, [price])
+  }, [price_do, price_ot, currency])
 
 
   const yearsPanelName = useMemo(() => {
-    if (!years.s_yers && !years.po_yers) {
+    if (!s_yers && !po_yers) {
       return 'Рік випуску'
-    } else if (years.s_yers && years.po_yers) {
-      return `Рік випуску ${years.s_yers} - ${years.po_yers}`
+    } else if (s_yers && po_yers) {
+      return `Рік випуску ${s_yers} - ${po_yers}`
     } else {
-      return `Рік випуску ${years.s_yers || years.po_yers }`
+      return `Рік випуску ${s_yers || po_yers }`
     }
-  }, [years])
+  }, [s_yers, po_yers])
 
   const getFilterParams = () => {
     dispatch(setFilteringQueryString())
@@ -60,20 +66,111 @@ export const SmallFilter = () => {
   }, [paramsString])
 
 
+  const onChangeTypesOfTransport = (value) => {
+    dispatch(setFilterPrams({type: 'CATEGORY', data: value}))
+  }
+
+  const onChangeMarka = (value, markFilterId) => {
+
+    if (value) {
+      dispatch(setFilterPrams({type: 'MARKARR', data: {
+          value, markFilterId, identifier: 'mark'
+        }}))
+    } else {
+      dispatch(setFilterPrams({type: 'MARKARR', data: {
+          value: null, markFilterId, identifier: 'mark'
+        }}))
+    }
+    // if (value) {
+    //   dispatch(setFilterPrams({type: 'MARKA', data: value}))
+    // } else {
+    //   dispatch(setFilterPrams({type: 'MARKA', data: null}))
+    // }
+  }
+
+
+  const onChangeModel = (value, markFilterId) => {
+    // if (value) {
+    //   dispatch(setFilterPrams({type: 'MODEL', data: value}))
+    // } else {
+    //   dispatch(setFilterPrams({type: 'MODEL', data: null}))
+    // }
+
+    if (value) {
+      dispatch(setFilterPrams({type: 'MARKARR', data: {
+        value, markFilterId, identifier: 'model'
+        }}))
+    } else {
+      dispatch(setFilterPrams({type: 'MARKARR', data: {
+          value: null, markFilterId, identifier: 'model'
+        }}))
+    }
+  }
+
+
+  const onChangeYears = (value, markFilterId) => {
+    dispatch(setFilterPrams({type: 'MARKARR', data: {
+        value, markFilterId, identifier: 'model'
+      }}))
+  }
+
+  const onChangePrice = (value, identifier) => {
+    switch (identifier) {
+      case 'price_ot':
+        dispatch(setFilterPrams({type: 'PRICE', data: value}))
+        break;
+      case 'price_do':
+        dispatch(setFilterPrams({type: 'PRICE', data: value}))
+        break;
+      case 'currency':
+        dispatch(setFilterPrams({type: 'PRICE', data: value}))
+        break;
+      case 'change':
+        dispatch(setFilterPrams({type: 'PRICE', data: value}))
+        break;
+      default:
+        break;
+    }
+  }
+
+  const onChangeLocation = (value) => {
+    dispatch(setFilterPrams({type: 'LOCATION', data: value}))
+  }
+
+
   return (
     <div className={styles.wrapper}>
-      <TypesOfTransport width={250}/>
-      <Brand width={250}/>
-      <Model width={250}/>
-      <State width={250}/>
-      <CollapseWrapper width={250} panelName={pricePanelName}>
-        <Price />
-      </CollapseWrapper>
-      <CollapseWrapper width={250} panelName={yearsPanelName}>
-        <Years />
-      </CollapseWrapper>
+      <div>
+        <TypesOfTransport width={250} onChangeTypesOfTransport={onChangeTypesOfTransport}/>
+      </div>
 
-      <Button type="primary" onClick={getFilterParams} icon={<SearchOutlined />}>Пошук</Button>
+      <div>
+        <Brand width={250} onChangeMarka={onChangeMarka} markFilterId={1}/>
+      </div>
+
+      <div>
+        <Model width={250} onChangeModel={onChangeModel} markFilterId={1}/>
+      </div>
+
+      <div style={{width: 250}}>
+        <LocationCascader onChangeLocation={onChangeLocation}/>
+      </div>
+
+      <div>
+        <CollapseWrapper width={250} panelName={pricePanelName}>
+          <Price onChangePrice={onChangePrice}/>
+        </CollapseWrapper>
+      </div>
+
+      <div>
+        <CollapseWrapper width={250} panelName={yearsPanelName}>
+          <Years onChangeYears={onChangeYears} markFilterId={1}/>
+        </CollapseWrapper>
+      </div>
+
+
+
+      <Button className={styles.btn} type="primary" onClick={getFilterParams} icon={<SearchOutlined />}>Пошук</Button>
 
     </div>
   )

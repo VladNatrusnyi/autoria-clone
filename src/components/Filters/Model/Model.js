@@ -4,16 +4,21 @@ import {setFilterPrams} from "../../../store/filters/filtersSlice";
 import {useGetModelsOfTransportQuery} from "../../../store/queries/autoRiaApi";
 import {Select} from "antd";
 
-export const Model = ({width = 120}) => {
+export const Model = ({width = 120, onChangeModel, markFilterId}) => {
   const dispatch = useDispatch()
 
   const categoryId = useSelector(state => state.filters.filteringParams.category_id)
-  const markId = useSelector(state => state.filters.filteringParams.marka_id)
-  const modelId = useSelector(state => state.filters.filteringParams.model_id)
 
-  useEffect(() => {
-    dispatch(setFilterPrams({type: 'MODEL', data: null}))
-  }, [markId, categoryId])
+  const markArr = useSelector(state => state.filters.filteringParams.markArr)
+
+  const markId = markArr.find(el => el.markFilterId === markFilterId)?.marka_id
+
+  const modelId = markArr.find(el => el.markFilterId === markFilterId)?.model_id
+
+  // useEffect(() => {
+  //   // dispatch(setFilterPrams({type: 'MODEL', data: null}))
+  //   onChangeModel(null, markFilterId)
+  // }, [markId, categoryId])
 
   const { data, isLoading, isFetching, isError } = useGetModelsOfTransportQuery({categoryId, markId}, {
     skip: !markId,
@@ -34,11 +39,7 @@ export const Model = ({width = 120}) => {
 
 
   const onChange = (value) => {
-    if (value) {
-      dispatch(setFilterPrams({type: 'MODEL', data: value}))
-    } else {
-      dispatch(setFilterPrams({type: 'MODEL', data: null}))
-    }
+    onChangeModel(value, markFilterId)
   };
 
 
@@ -48,29 +49,28 @@ export const Model = ({width = 120}) => {
     }
     }, [isFetching])
 
-  // const onSearch = (value) => {
-  //   console.log('search:', value);
-  // };
 
   return (
-    <Select
-      loading={isLoading}
-      showSearch
-      allowClear
-      style={{
-        width: width,
-      }}
-      notFoundContent={
-        <div>Спочатку оберіть модель</div>
-      }
-      value={modelId}
-      placeholder='Модель'
-      onChange={onChange}
-      // onSearch={onSearch}
-      filterOption={(input, option) =>
-        (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
-      }
-      options={models}
-    />
+    <>
+      <Select
+        loading={isLoading}
+        showSearch
+        allowClear
+        style={{
+          width: width,
+        }}
+        notFoundContent={
+          <div>Спочатку оберіть модель</div>
+        }
+        value={modelId === 0 || !models.length ? null : modelId}
+        placeholder='Модель'
+        onChange={onChange}
+        // onSearch={onSearch}
+        filterOption={(input, option) =>
+          (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
+        }
+        options={models}
+      />
+    </>
   )
 }

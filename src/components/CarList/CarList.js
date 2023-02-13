@@ -1,46 +1,40 @@
 import {CarListItem} from "./CarListItem/CarListItem";
-import {useParams} from "react-router";
 import {useGetCarsIdQuery, useGetCarsQuery} from "../../store/queries/autoRiaApi";
-import {useEffect, useMemo, useState} from "react";
 import {Pagination, Skeleton} from "antd";
 import styles from './CarList.module.css'
-import {useDispatch, useSelector} from "react-redux";
-import {setFilteringQueryString, setFilterPrams} from "../../store/filters/filtersSlice";
-import {useSearchParams} from "react-router-dom";
+import {useSelector} from "react-redux";
+import {useEffect, useMemo} from "react";
+import {useParamsInSearchString} from "../../customHooks/useParamsInSearchString";
+import {PreloaderCar} from "../UI/PreloaderCar/PreloaderCar";
 
-export const CarList = () => {
-  const dispatch = useDispatch()
-  // const {params} = useParams()
+export const CarList = ({objOfParams, onChangePagination}) => {
 
-  const [searchParams, setSearchParams] = useSearchParams()
+  const page = useSelector(state => state.filters.filteringParams.page)
 
-  const objOfParams = searchParams.toString().split('&').map(item => {
-    const arr = item.split('=')
-    return {[arr[0]]: arr[1]}
-  }).reduce((total, amount) => ({...total, ...amount}));
+  const stringOfParams = Object.entries(objOfParams).map(el => el.join('=')).join('&')
 
-  // console.log('objOfParams', objOfParams)
-
-
-  const { data: carsId, isFetching: isLoadingCarsId, isError } = useGetCarsIdQuery(searchParams.toString(), {
-    skip: !searchParams.toString(),
+  const { data: carsId, isFetching: isLoadingCarsId, isError } = useGetCarsIdQuery(stringOfParams, {
+    skip: !stringOfParams,
   })
-
 
   const { data: cars, isFetching: isLoadingCars } = useGetCarsQuery(carsId && carsId.ids, {
     skip: carsId && !carsId.count,
   })
 
+  const skeleton = carsId && carsId.ids.map(carId => {
+        return (
+          <Skeleton
+            className={styles.skeleton}
+            key={carId}
+            active
+            paragraph={{
+              rows: 4,
+            }}
+          />
+        )
+      })
 
-
-  //
-  // if (!carsId) return <img src={require('./../../assets/img/preloader.gif')} alt=""/>
-  //
-  // if (carsId && !carsId.count) {
-  //   return <div className={styles.notFound}>Не знайдено автомобілів за даними параметрами</div>
-  // }
-  //
-  // if (carsId && carsId.count && !cars) {
+  // if (carsId && carsId.count && isLoadingCars) {
   //   return carsId.ids.map(carId => {
   //     return (
   //       <Skeleton
@@ -55,58 +49,39 @@ export const CarList = () => {
   //   })
   // }
 
-  console.log('carsId', carsId)
-
-  if (carsId && carsId.count && isLoadingCars) {
-    return carsId.ids.map(carId => {
-      return (
-        <Skeleton
-          className={styles.skeleton}
-          key={carId}
-          active
-          paragraph={{
-            rows: 4,
-          }}
-        />
-      )
-    })
-  }
 
   if (carsId && !carsId.count) {
     return (
       <>
         <div style={{textAlign: 'center'}}>
           <h3>На жаль, ми не знайши авто за вашим запитом</h3>
-          <h4>Але ми підібрали схожі варіанти</h4>
+          {/*<h4>Але ми підібрали схожі варіанти</h4>*/}
         </div>
-
-        {/*{*/}
-        {/*  {*/}
-        {/*    cars && cars.length && cars.map(car => {*/}
-        {/*    return <CarListItem key={car.autoData.autoId} carData={car}/>*/}
-        {/*  })*/}
-        {/*}*/}
-        {/*}*/}
       </>
     )
   }
 
   return (
     <>
-
       {
-        isLoadingCarsId && <img src={require('./../../assets/img/preloader.gif')} alt="preloader"/>
+        isLoadingCarsId ?
+          <PreloaderCar />
+          // <img src={require('./../../assets/img/preloader.gif')} alt="preloader"/>
+          : carsId && carsId.count && isLoadingCars ? skeleton
+          : cars && cars.length && cars.map(car => {
+            return <CarListItem key={car.autoData.autoId} carData={car}/>
+          })
       }
 
-      {
-        cars && cars.length && cars.map(car => {
-          return <CarListItem key={car.autoData.autoId} carData={car}/>
-        })
-      }
+      {/*{*/}
+      {/*  isLoadingCarsId && <img src={require('./../../assets/img/preloader.gif')} alt="preloader"/>*/}
+      {/*}*/}
 
-
-
-
+      {/*{*/}
+      {/*  cars && cars.length && cars.map(car => {*/}
+      {/*    return <CarListItem key={car.autoData.autoId} carData={car}/>*/}
+      {/*  })*/}
+      {/*}*/}
 
       {
         carsId && carsId.count && !isLoadingCarsId &&
@@ -114,12 +89,11 @@ export const CarList = () => {
           className={styles.pagination}
           pageSize={10}
           showSizeChanger={false}
-          defaultCurrent={+objOfParams.page + 1}
+          defaultCurrent={+page + 1}
           total={carsId.count}
           responsive={true}
           onChange={(page) => {
-            // dispatch(setFilterPrams({type: 'PAGE', data: (page - 1).toString()}))
-            setSearchParams({...objOfParams, page: (page - 1).toString()})
+            onChangePagination(page)
             window.scrollTo(0, 0)
           }}
         />

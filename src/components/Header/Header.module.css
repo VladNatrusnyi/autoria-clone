@@ -3,7 +3,25 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    position: relative;
     /*background: green;*/
+}
+
+.header_wrapper i{
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+
+.backIcon {
+    display: inline-block;
+    font-size: 20px;
+}
+
+.backIcon:hover {
+    transform: scale(1.2);
+    color: #1677ff;
+    cursor: pointer;
 }
 
 .header_img {

@@ -1,0 +1,16 @@
+.wrapper {
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: space-between;*/
+}
+
+.inputGroup {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2px;
+}
+.separator {
+    margin: 0 5px;
+}

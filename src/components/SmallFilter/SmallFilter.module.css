@@ -1,9 +1,26 @@
 .wrapper {
     margin: 20px auto;
     max-width: 600px;
-    height: 500px;
     background: #ef6c6c;
     border-radius: 10px;
-    padding: 10px;
+    padding: 20px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-row-gap: 15px;
+    justify-items: center;
+}
+
+@media screen and (max-width: 720px) {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.btn {
+    grid-area: 4/1/5/3;
 }
 

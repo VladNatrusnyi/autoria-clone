@@ -6,7 +6,11 @@ import {VinCode} from "../../UI/VinCode/VinCode";
 import {InfoBar} from "../../UI/InfoBar/InfoBar";
 import {Tooltip} from "antd";
 import {useState} from "react";
+import {useNavigate} from "react-router";
+import {MoneyBlock} from "./MoneyBlock/MoneyBlock";
 export const CarListItem = ({carData}) => {
+  const navigate = useNavigate()
+
   const [isOpenDescription, setIsOpenDescription] = useState(false)
 
   const necessaryData = {
@@ -29,29 +33,41 @@ export const CarListItem = ({carData}) => {
     addDate: carData.addDate,
     infoBarText: carData.infoBarText,
     description: carData.autoData.description,
+    isActive: carData.autoData.active
+  }
+
+
+  const goToCarPage = () => {
+    navigate(`/car/${necessaryData.autoId}`)
   }
 
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.imgBlock}>
+      <div className={styles.imgBlock} onClick={goToCarPage}>
         <img src={necessaryData.mainImg} alt="car photo"/>
+        { !necessaryData.isActive && <p><span>Продано</span></p>}
       </div>
 
       <div className={styles.infoBlock}>
         <div>
-          <p className={styles.title}>
+          <p className={styles.title} onClick={goToCarPage}>
             {necessaryData.title}
           </p>
-          <div className={styles.price}>
-            <p className={styles.priceDollar}>
-              {moneyFormatter('USD', necessaryData.prise.USD)}
-            </p>
-            <div className={styles.priseDecor}></div>
-            <p className={styles.priceUAN}>
-              {moneyFormatter('UAH', necessaryData.prise.UAH)}
-            </p>
-          </div>
+
+          <MoneyBlock necessaryData={necessaryData}/>
+
+          {/*<div className={styles.price}>*/}
+          {/*  <p className={styles.priceDollar}>*/}
+          {/*    {moneyFormatter('USD', necessaryData.prise.USD)}*/}
+          {/*  </p>*/}
+          {/*  <div className={styles.priseDecor}></div>*/}
+          {/*  <p className={styles.priceUAN}>*/}
+          {/*    {moneyFormatter('UAH', necessaryData.prise.UAH)}*/}
+          {/*  </p>*/}
+          {/*</div>*/}
+
+
           <div className={styles.badgesWrapper}>
             <div className={styles.badge}>
               <i className="bi bi-speedometer2"
@@ -117,7 +133,7 @@ export const CarListItem = ({carData}) => {
           </div>
         </div>
         <div className={styles.date}>
-          {dateFormat(new Date(necessaryData.addDate), "mm.dd.yyyy HH:MM")}
+          {dateFormat(new Date(necessaryData.addDate), "dd.mm.yyyy HH:MM")}
         </div>
       </div>
     </div>

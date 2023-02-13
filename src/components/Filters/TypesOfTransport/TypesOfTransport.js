@@ -1,14 +1,18 @@
 import {Select} from "antd";
 import {useGetTypesOfTransportQuery} from "../../../store/queries/autoRiaApi";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {setFilterPrams} from "../../../store/filters/filtersSlice";
+import {useMemo} from "react";
+import {useParamsInSearchString} from "../../../customHooks/useParamsInSearchString";
 
-export const TypesOfTransport = ({width = 120}) => {
+export const TypesOfTransport = ({width = 120, onChangeTypesOfTransport}) => {
   const dispatch = useDispatch()
 
+  const category_id = useSelector(state => state.filters.filteringParams.category_id)
+
   const onChange = (value) => {
-    console.log(`selected ${value}`);
-    dispatch(setFilterPrams({type: 'CATEGORY', data: value}))
+    onChangeTypesOfTransport(value)
+    // dispatch(setFilterPrams({type: 'CATEGORY', data: value}))
   };
 
   const { data, isLoading, isError } = useGetTypesOfTransportQuery(undefined, {})
@@ -17,18 +21,23 @@ export const TypesOfTransport = ({width = 120}) => {
     ? [{label: 'Будь-який', value: 0}, ...data?.map(item => ({label: item.name, value: item.value}))]
     : []
 
-  console.log('Types', isLoading)
 
   return (
-    <Select
-      loading={isLoading}
-      defaultValue={0}
-      placeholder='Тип транспорту'
-      style={{
-        width: width,
-      }}
-      onChange={onChange}
-      options={types}
-    />
+    <>
+      {
+        types.length ?
+          <Select
+            loading={isLoading}
+            value={category_id}
+            placeholder='Тип транспорту'
+            style={{
+              width: width,
+            }}
+            onChange={onChange}
+            options={types}
+          />
+          : null
+      }
+    </>
   )
  }

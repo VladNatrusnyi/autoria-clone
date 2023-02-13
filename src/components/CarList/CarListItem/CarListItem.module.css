@@ -8,15 +8,37 @@
 .imgBlock {
     flex: 0 0 300px;
     height: 200px;
+    position: relative;
 }
+
+.imgBlock:hover {
+    cursor: pointer;
+}
+
 .imgBlock img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 5px;
 }
+
+.imgBlock p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.imgBlock p span {
+    color: white;
+    background: rgb(0, 0, 0); /* на случай, если следующая строка не сработает */
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+}
+
+
 .infoBlock {
-    flex: 0 1 100%;
+    flex: 1 1 100%;
     padding-left: 15px;
     min-height: 200px;
     display: flex;
@@ -28,28 +50,38 @@
     color: blue;
     font-size: 18px;
 }
-.price {
-    display: flex;
-    align-items: flex-end;
+
+.title:hover {
+    cursor: pointer;
+    color: #1677ff;
 }
-.priceDollar {
-    margin: 0;
-    color: green;
-    font-size: 18px;
-    font-weight: bold;
+
+
+@media screen and (max-width: 660px) {
+    .wrapper {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imgBlock {
+       width: 100%;
+    }
+
+    .infoBlock {
+        width: 100%;
+        margin-top: 10px;
+    }
 }
-.priceUAN {
-    font-size: 12px;
-    margin: 0;
-}
-.priseDecor {
-    width: 4px;
-    height: 4px;
-    background: gray;
-    align-self: center;
-    border-radius: 20px;
-    margin: 0 7px;
-}
+
+
+
+
+
+
+
+
+
 .badgesWrapper {
     display: flex;
     flex-wrap: wrap;

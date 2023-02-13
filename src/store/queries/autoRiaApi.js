@@ -19,13 +19,60 @@ export const autoRiaApi = createApi({
       }),
     }),
 
+    getBodyTypes: builder.query({
+      query: (categoryId) => ({
+        url: `categories/${categoryId}/bodystyles?api_key=${apiKey}`
+      }),
+    }),
+
     getModelsOfTransport: builder.query({
       query: ({categoryId, markId}) => ({
         url: `categories/${categoryId}/marks/${markId}/models/_group?api_key=${apiKey}`
       }),
     }),
 
+    getGearboxesOfTransport: builder.query({
+      query: (categoryId) => ({
+        url: `categories/${categoryId}/gearboxes?api_key=${apiKey}`
+      }),
+    }),
+
+    getDriverTypesOfTransport: builder.query({
+      query: (categoryId) => ({
+        url: `categories/${categoryId}/driverTypes?api_key=${apiKey}`
+      }),
+    }),
+
+    getFuelOfTransport: builder.query({
+      query: () => ({
+        url: `type?api_key=${apiKey}`
+      }),
+    }),
+
     getRegionsOfTransport: builder.query({
+      async queryFn(_arg, _queryApi, _extraOptions, fetchWithBQ) {
+        // get a random user
+        const statesData = await fetchWithBQ(`states?api_key=${apiKey}`)
+        if (statesData.error) return { error: statesData.error }
+        const states = statesData.data
+
+        let arr = []
+        for (let state of states) {
+          const cities = await fetchWithBQ(`states/${state.value}/cities?api_key=${apiKey}`)
+          if (cities.data) {
+            const res = {
+              label: state.name,
+              value: state.value,
+              children: cities.data.map(city => ({label: city.name, value: city.value }))
+            }
+            arr.push(res)
+          }
+        }
+        return arr ? { data: arr } : { error: 'Error' }
+      },
+    }),
+
+    getCitiesOfTransport: builder.query({
       query: () => ({
         url: `states?api_key=${apiKey}`
       }),
@@ -70,6 +117,18 @@ export const autoRiaApi = createApi({
       },
     }),
 
+    getCurrentCar: builder.query({
+      query: (carId) => ({
+        url: `info?api_key=${apiKey}&auto_id=${carId}`
+      }),
+    }),
+
+    getCarImages: builder.query({
+      query: (carId) => ({
+        url: `fotos/${carId}?api_key=${apiKey}`
+      }),
+    }),
+
 
 
   }),
@@ -84,4 +143,10 @@ export const {
   useGetRegionsOfTransportQuery,
   useGetCarsIdQuery,
   useGetCarsQuery,
+  useGetBodyTypesQuery,
+  useGetGearboxesOfTransportQuery,
+  useGetFuelOfTransportQuery,
+  useGetDriverTypesOfTransportQuery,
+  useGetCurrentCarQuery,
+  useGetCarImagesQuery
 } = autoRiaApi

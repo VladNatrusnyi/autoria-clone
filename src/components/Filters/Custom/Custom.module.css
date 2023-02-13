@@ -1,0 +1,12 @@
+.checkbox {
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox label {
+    margin-left: 0!important;
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+}

@@ -1,0 +1,30 @@
+.price {
+    display: flex;
+    align-items: center;
+
+
+}
+
+.price.forCar {
+    flex-direction: column;
+    align-items: center;
+}
+
+.priceDollar {
+    margin: 0;
+    color: green;
+    font-size: 18px;
+    font-weight: bold;
+}
+.priceUAN {
+    font-size: 12px;
+    margin: 0;
+}
+.priseDecor {
+    width: 4px;
+    height: 4px;
+    background: gray;
+    align-self: center;
+    border-radius: 20px;
+    margin: 0 7px;
+}

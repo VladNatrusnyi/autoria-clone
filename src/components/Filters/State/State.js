@@ -6,7 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 export const State = ({width = 120}) => {
   const dispatch = useDispatch()
 
-  const statesId = useSelector(state => state.filters.filteringParams.location.state)
+  const statesId = useSelector(state => state.filters.filteringParams.state)
 
   const { data , isLoading, isError } = useGetRegionsOfTransportQuery(undefined, {})
 

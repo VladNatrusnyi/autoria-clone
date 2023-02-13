@@ -5,13 +5,30 @@
 
 .sidebarBlock {
     flex: 0 0 250px;
+
     /*background: blue;*/
 }
+
+@media screen and (max-width: 965px) {
+    .sidebarBlock {
+        display: none;
+    }
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
 
 .carListBlock {
     flex: 0 1 100%;
     padding: 10px;
     /*background: green;*/
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .pagination{}

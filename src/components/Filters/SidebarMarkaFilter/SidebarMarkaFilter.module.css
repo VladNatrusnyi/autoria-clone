@@ -1,0 +1,15 @@
+.wrapper {
+    border-bottom: 1px dashed black;
+    margin-bottom: 15px;
+    width: 220px;
+}
+
+/*.wrapper:hover {*/
+/*    cursor: pointer;*/
+/*}*/
+
+.deleteBtn {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}

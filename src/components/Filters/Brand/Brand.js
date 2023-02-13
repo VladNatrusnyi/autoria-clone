@@ -4,15 +4,19 @@ import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 import {setFilterPrams} from "../../../store/filters/filtersSlice";
 
-export const Brand = ({width = 120}) => {
+export const Brand = ({width = 120, onChangeMarka, markFilterId}) => {
   const dispatch = useDispatch()
 
   const categoryId = useSelector(state => state.filters.filteringParams.category_id)
-  const markValue = useSelector(state => state.filters.filteringParams.marka_id)
 
-  useEffect(() => {
-    dispatch(setFilterPrams({type: 'MARKA', data: null}))
-  }, [categoryId])
+  const markArr = useSelector(state => state.filters.filteringParams.markArr)
+
+  const markValue = markArr.find(el => el.markFilterId === markFilterId)?.marka_id
+
+  // useEffect(() => {
+  //   // dispatch(setFilterPrams({type: 'MARKA', data: null}))
+  //   onChangeMarka(null, markFilterId)
+  // }, [categoryId])
 
   const { data , isLoading, isError } = useGetMarksOfTransportQuery(categoryId, {
     skip: !categoryId,
@@ -25,11 +29,12 @@ export const Brand = ({width = 120}) => {
 
 
   const onChange = (value) => {
-    if (value) {
-      dispatch(setFilterPrams({type: 'MARKA', data: value}))
-    } else {
-      dispatch(setFilterPrams({type: 'MARKA', data: null}))
-    }
+    onChangeMarka(value, markFilterId)
+    // if (value) {
+    //   dispatch(setFilterPrams({type: 'MARKA', data: value}))
+    // } else {
+    //   dispatch(setFilterPrams({type: 'MARKA', data: null}))
+    // }
   };
 
   // const onSearch = (value) => {

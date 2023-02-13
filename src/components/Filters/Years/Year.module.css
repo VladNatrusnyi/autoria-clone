@@ -1,5 +1,10 @@
 .wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 220px;
+}
+
+.select {
+    margin: 0 10px;
 }

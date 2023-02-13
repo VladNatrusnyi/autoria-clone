@@ -1,0 +1,11 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.preloader {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

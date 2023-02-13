@@ -7,19 +7,21 @@ import {useEffect} from "react";
 const { Option } = Select;
 
 
-export const Price = () => {
+export const Price = ({onChangePrice}) => {
   const dispatch = useDispatch()
 
   const currencyTypes = useSelector(state => state.filters.currencyTypes)
 
-  const price = useSelector(state => state.filters.filteringParams.price)
+  const {price_do, price_ot, currency} = useSelector(state => state.filters.filteringParams)
+
+  const price = {price_do, price_ot, currency}
 
   useEffect(() => {
     const a = setTimeout(() => {
-      if (price.price_do && price.price_ot && price.price_do < price.price_ot) {
-        let price_do = price.price_do
-        let price_ot = price.price_ot
-        dispatch(setFilterPrams({type: 'PRICE', data: {...price, price_ot: price_do, price_do: price_ot }}))
+      if (price_do && price_ot && price_do < price_ot) {
+        const value = {...price, price_ot: price_do, price_do: price_ot }
+        onChangePrice(value, 'change')
+        // dispatch(setFilterPrams({type: 'PRICE', data: {...price, price_ot: price_do, price_do: price_ot }}))
       }
     },2000);
 
@@ -27,16 +29,19 @@ export const Price = () => {
   }, [price])
 
   const onChangePriceOt = (value) => {
-    dispatch(setFilterPrams({type: 'PRICE', data: {...price, price_ot: value}}))
+    onChangePrice({...price, price_ot: value}, 'price_ot')
+    // dispatch(setFilterPrams({type: 'PRICE', data: value}))
   };
 
   const onChangePriceDo = (value) => {
-    dispatch(setFilterPrams({type: 'PRICE', data: {...price, price_do: value}}))
+    onChangePrice({...price, price_do: value}, 'price_do')
+    // dispatch(setFilterPrams({type: 'PRICE', data: value}))
   };
 
 
   const handleChangeCurrency = (value) => {
-    dispatch(setFilterPrams({type: 'PRICE', data: {...price, currency: value}}))
+    onChangePrice({...price, currency: value}, 'currency')
+    // dispatch(setFilterPrams({type: 'PRICE', data: value}))
   }
 
   return (
