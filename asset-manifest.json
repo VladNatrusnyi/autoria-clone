@@ -1,14 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.3b435afb.css",
-    "main.js": "/static/js/main.8fa6c235.js",
-    "static/media/race-car-309123_1280.jpg": "/static/media/race-car-309123_1280.31b7446744fe44775887.jpg",
-    "index.html": "/index.html",
-    "main.3b435afb.css.map": "/static/css/main.3b435afb.css.map",
-    "main.8fa6c235.js.map": "/static/js/main.8fa6c235.js.map"
+    "main.css": "/autoria-clone/static/css/main.5a5a576c.css",
+    "main.js": "/autoria-clone/static/js/main.3292441c.js",
+    "static/media/preloader.gif": "/autoria-clone/static/media/preloader.20e5e7813fd770f025a6.gif",
+    "static/media/race-car-309123_1280.jpg": "/autoria-clone/static/media/race-car-309123_1280.31b7446744fe44775887.jpg",
+    "index.html": "/autoria-clone/index.html",
+    "main.5a5a576c.css.map": "/autoria-clone/static/css/main.5a5a576c.css.map",
+    "main.3292441c.js.map": "/autoria-clone/static/js/main.3292441c.js.map"
   },
   "entrypoints": [
-    "static/css/main.3b435afb.css",
-    "static/js/main.8fa6c235.js"
+    "static/css/main.5a5a576c.css",
+    "static/js/main.3292441c.js"
   ]
 }
